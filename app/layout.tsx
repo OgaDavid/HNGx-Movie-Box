@@ -1,22 +1,28 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import Navbar from "@/components/Navbar/navbar";
+import "./globals.css";
+import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+const dm_Sans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Moviebox',
-  description: 'Watch trending movies.',
-}
+  title: {
+    default: "Moviebox - Watch the latest and trending movies for free!",
+    template: "%s | Moviebox",
+  },
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={dm_Sans.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
-  )
+  );
 }
