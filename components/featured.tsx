@@ -19,7 +19,7 @@ const FeaturedMovies = () => {
             See More <ChevronRight className="w-4 h-4 text-rose-700" />
           </Link>
         </div>
-        <div className="mt-8 place-items-center gap-x-2 gap-y-5 sm:gap-y-10 grid md:grid-cols-4 sm:grid-col-3 grid-cols-2">
+        <div className="mt-8 place-items-center gap-x-2 gap-y-5 sm:gap-y-10 grid max-sm:grid-cols-2 max-md:grid-cols-3 md:grid-cols-4">
           <MovieCard />
           <MovieCard />
           <MovieCard />

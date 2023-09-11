@@ -4,7 +4,7 @@ import BannerDetails from "@/components/Banner/details"
 const Banner = () => {
     return (
         <div>
-           <Image className="h-[600px] w-full -z-[1] object-cover" width={1440} height={600} alt="Banner image" src="/images/banner.png" />
+           <Image className="h-[650px] w-full -z-[1] object-cover" width={1440} height={600} alt="Banner image" src="/images/banner.png" />
            <BannerDetails />
         </div>
     )
