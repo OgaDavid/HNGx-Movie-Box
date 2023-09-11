@@ -1,20 +1,69 @@
 import React from "react";
 import Container from "@/components/ui/container";
+import Image from "next/image";
+import Link from "next/link";
+
+const socialIcons = [
+  {
+    name: "Facebook",
+    imageUrl: "/images/facebook.svg",
+  },
+  {
+    name: "Instagram",
+    imageUrl: "/images/instagram.svg",
+  },
+  {
+    name: "Twitter",
+    imageUrl: "/images/twitter.svg",
+  },
+  {
+    name: "Youtube",
+    imageUrl: "/images/youtube.svg",
+  },
+];
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="mt-10 border-t">
       <Container>
-        <div>
-            <div></div>
-            <div>
-                <ul>
-                    <li>Conditions of Use</li>
-                    <li>Privacy & Policy</li>
-                    <li>Press Room</li>
-                </ul>
-            </div>
-            <p>&copy; 2021 MovieBox by Adriana Eka Prayudha  </p>
+        <div className="flex items-center gap-6 flex-col justify-center py-10 md:py-16 text-center">
+          <div className="flex items-center justify-center gap-12">
+            {socialIcons.map((icon) => (
+              <Image
+                alt={icon.name}
+                src={icon.imageUrl}
+                width={24}
+                height={24}
+              />
+            ))}
+          </div>
+          <div>
+            <ul className="font-bold max-md:text-sm max-md:flex-col flex items-center text-center justify-center gap-2 md:gap-12">
+              <li className="hover:underline hover:cursor-pointer">
+                Conditions of Use
+              </li>
+              <li className="hover:underline hover:cursor-pointer">
+                Privacy & Policy
+              </li>
+              <li className="hover:underline hover:cursor-pointer">
+                Press Room
+              </li>
+            </ul>
+          </div>
+          <div className="gap-2">
+            <p className="text-sm text-muted-foreground">
+              &copy; 2021 MovieBox by Adriana Eka Prayudha{" "}
+            </p>
+            <p className="text-xs text-rose-700 text-muted-foreground">
+              Built by{" "}
+              <Link
+                className="italic underline"
+                href="https://github.com/OgaDavid"
+              >
+                OgaDavid
+              </Link>{" "}
+            </p>
+          </div>
         </div>
       </Container>
     </footer>
