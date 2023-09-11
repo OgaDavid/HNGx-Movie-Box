@@ -58,6 +58,8 @@ const Footer = () => {
             <p className="text-xs text-rose-700 text-muted-foreground">
               Built by{" "}
               <Link
+                target="_blank"
+                rel="noopener noreferrer"
                 className="italic underline"
                 href="https://github.com/OgaDavid"
               >
