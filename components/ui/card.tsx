@@ -1,16 +1,23 @@
+import { Heart } from "lucide-react";
 import Image from "next/image";
 
 const MovieCard = () => {
   return (
-    <div className="flex space-y-2 flex-col">
+    <div className="flex relative space-y-2 flex-col">
       <Image
-        className="w-[150px] rounded-tl-lg rounded-tr-lg  h-[230px] md:w-[250px] md:h-[370px]"
+        className="w-[150px] rounded-tl-xl rounded-tr-xl  h-[230px] md:w-[250px] md:h-[370px]"
         src="/images/stranger-things.png"
         alt="Movie poster"
         width={250}
         height={370}
       />
-      <span className="text-muted-foreground max-md:text-xs">
+      <div className="absolute text-gray-300 py-1 px-3 rounded-full top-3 left-2 glassmorphism">
+        <span className="text-xs md:text-sm">TV Series</span>
+      </div>
+      <div className="absolute text-gray-300 p-2 rounded-full top-[13px] right-3 glassmorphism">
+        <Heart className="w-4 h-4" />
+      </div>
+      <span className="text-muted-foreground text-xs">
         USA, 2018 - current
       </span>
       <h4 className="md:text-xl text-base font-bold">Stranger Things</h4>
