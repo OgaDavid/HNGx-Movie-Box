@@ -1,7 +1,13 @@
+import Banner from "@/components/Banner/banner";
+import Navbar from "@/components/Navbar/navbar";
+
 export default function Home() {
   return (
-    <main>
-      Hello
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Banner />
+      </main>
+    </>
   );
 }
