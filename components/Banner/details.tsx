@@ -13,7 +13,7 @@ const BannerDetails = () => {
         </h1>
         <p className="text-white max-md:text-sm max-w-[300px] md:max-w-[500px]">
           John Wick is on the run after killing a member of the international
-          assassins' guild, and with a $14 million price tag on his head, he is
+          assassins&apos; guild, and with a $14 million price tag on his head, he is
           the target of hit men and women everywhere.
         </p>
         <div className="flex items-center gap-5 my-4">
