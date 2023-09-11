@@ -1,5 +1,6 @@
 import Banner from "@/components/Banner/banner";
 import Navbar from "@/components/Navbar/navbar";
+import FeaturedMovies from "@/components/featured";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Banner />
+        <FeaturedMovies />
       </main>
     </>
   );

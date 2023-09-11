@@ -18,7 +18,7 @@ const BannerDetails = () => {
         </p>
         <div className="flex items-center gap-5 my-4">
           <span className="flex items-center gap-2 text-white">
-            <Image src="/images/imdb.svg" alt="IMDb" width={35} height={17} />
+            <Image src="/images/tmdb.svg" alt="IMDb" width={35} height={17} />
             860 / 100
           </span>
           <span className="flex items-center gap-2 text-white">
