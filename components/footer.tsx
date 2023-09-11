@@ -30,6 +30,7 @@ const Footer = () => {
           <div className="flex items-center justify-center gap-12">
             {socialIcons.map((icon) => (
               <Image
+                className="hover:cursor-pointer"
                 key={icon.name}
                 alt={icon.name}
                 src={icon.imageUrl}
