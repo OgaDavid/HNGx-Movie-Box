@@ -3,8 +3,9 @@ import Image from "next/image";
 
 const MovieCard = () => {
   return (
-    <div className="flex relative space-y-2 flex-col">
+    <div data-testid="movie-card" className="flex relative space-y-2 flex-col">
       <Image
+        data-testid="movie-poster"
         className="w-[150px] rounded-tl-xl rounded-tr-xl  h-[230px] md:w-[250px] md:h-[370px]"
         src="/images/stranger-things.png"
         alt="Movie poster"
@@ -18,9 +19,11 @@ const MovieCard = () => {
         <Heart className="w-4 h-4" />
       </div>
       <span className="text-muted-foreground text-xs">
-        USA, 2018 - current
+        USA, <span data-testid="movie-release-date">2018 - current</span>{" "}
       </span>
-      <h4 className="md:text-xl text-base font-bold">Stranger Things</h4>
+      <h4 data-testid="movie-title" className="md:text-xl text-base font-bold">
+        Stranger Things
+      </h4>
       <div className="flex items-center gap-1 justify-between">
         <span className="flex max-md:text-xs font-semibold items-center gap-1 md:gap-2">
           <Image src="images/tmdb.svg" alt="imdb" width={35} height={17} />
