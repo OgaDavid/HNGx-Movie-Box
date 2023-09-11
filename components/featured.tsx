@@ -23,6 +23,9 @@ const FeaturedMovies = () => {
           <MovieCard />
           <MovieCard />
           <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
         </div>
       </Container>
     </section>
