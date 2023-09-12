@@ -2,9 +2,7 @@ import { BarChartBig, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Container from "@/components/ui/container";
 import MovieCard from "@/components/ui/card";
-// import { useState } from "react";
-import Loading from "@/components/ui/loading";
-import { Movies, MoviesResult } from "@/typings";
+import { Movies } from "@/typings";
 import getMovies from "@/lib/get-movies";
 
 const FeaturedMovies = async () => {
@@ -12,7 +10,6 @@ const FeaturedMovies = async () => {
   const moviesData: Promise<Movies> = getMovies();
 
   const { results: movies } = await moviesData;
-  // const [isLoading, setIsLoading] = useState(false);
 
   if (movies?.length === 0) {
   }
