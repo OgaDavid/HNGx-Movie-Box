@@ -7,13 +7,11 @@ import getMovies from "@/actions/get-movies";
 const Home = async () => {
   const { results } = await getMovies();
 
-  const bannerMovie = results[Math.floor(Math.random() * results.length)];
-
   return (
     <>
       <Navbar />
       <main>
-        <Banner movie={bannerMovie} />
+        <Banner movies={results} />
         <FeaturedMovies movies={results} />
       </main>
       <Footer />

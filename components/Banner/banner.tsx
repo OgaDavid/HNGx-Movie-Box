@@ -1,9 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import BannerDetails from "@/components/Banner/details";
-import { MoviesResult } from "@/typings";
+import { useEffect, useState } from "react";
 
-const Banner = ({ movie }: { movie: MoviesResult }) => {
-  const { title, overview } = movie;
+const Banner = ({ movies }: { movies: any }) => {
+  const [bannerMovie, setBannerMovie] = useState<any>();
+
+  useEffect(() => {
+    setBannerMovie(movies[Math.floor(Math.random() * movies.length)]);
+  }, []);
 
   return (
     <div>
@@ -11,10 +17,13 @@ const Banner = ({ movie }: { movie: MoviesResult }) => {
         className="h-[650px] w-full -z-[1] object-cover"
         width={1440}
         height={600}
-        alt={movie.title}
-        src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+        alt={bannerMovie?.title}
+        src={`https://image.tmdb.org/t/p/original${bannerMovie?.backdrop_path}`}
       />
-      <BannerDetails title={title} overview={overview} />
+      <BannerDetails
+        title={bannerMovie?.title}
+        overview={bannerMovie?.overview}
+      />
     </div>
   );
 };
