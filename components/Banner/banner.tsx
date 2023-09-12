@@ -23,6 +23,7 @@ const Banner = ({ movie }: { movie: MoviesResult }) => {
         src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
       />
       <BannerDetails
+        id={movie?.id}
         name={movie?.name!!}
         title={movie?.title!!}
         overview={truncateOverview(movie?.overview)}

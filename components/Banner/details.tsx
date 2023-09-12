@@ -3,14 +3,21 @@ import Container from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { PlayCircle } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface BannerDetailsProps {
-  title: string
-  name: string
-  overview: string
+  id: number;
+  title: string;
+  name: string;
+  overview: string;
 }
 
-const BannerDetails: React.FC<BannerDetailsProps> = ({ title, name, overview }) => {
+const BannerDetails: React.FC<BannerDetailsProps> = ({
+  id,
+  title,
+  name,
+  overview,
+}) => {
   return (
     <Container>
       <div className="absolute top-[40%] md:top-1/2 transform -translate-y-1/2">
@@ -36,10 +43,13 @@ const BannerDetails: React.FC<BannerDetailsProps> = ({ title, name, overview }) 
           </span>
         </div>
         <div className="flex gap-4 mt-4">
-          <Button className="bg-rose-700 hover:opacity-90 flex items-center gap-2 text-white px-4 py-2 rounded-md">
+          <Link
+            href={`/movie/${id}`}
+            className="bg-rose-700 hover:opacity-90 flex items-center gap-2 text-white px-4 py-2 rounded-md"
+          >
             <PlayCircle className="text-white w-4 h-4" />
             Watch trailer
-          </Button>
+          </Link>
         </div>
       </div>
     </Container>
