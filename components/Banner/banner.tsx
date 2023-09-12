@@ -11,6 +11,13 @@ const Banner = ({ movies }: { movies: any }) => {
     setBannerMovie(movies[Math.floor(Math.random() * movies.length)]);
   }, []);
 
+  function truncateOverview(text: any) {
+    if (text?.length > 200) {
+      return text.slice(0, 200) + "...";
+    }
+    return text;
+  }
+
   return (
     <div>
       <Image
@@ -22,7 +29,7 @@ const Banner = ({ movies }: { movies: any }) => {
       />
       <BannerDetails
         title={bannerMovie?.title}
-        overview={bannerMovie?.overview}
+        overview={truncateOverview(bannerMovie?.overview)}
       />
     </div>
   );
