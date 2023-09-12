@@ -1,18 +1,20 @@
-"use client";
-
 import { BarChartBig, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Container from "@/components/ui/container";
 import MovieCard from "@/components/ui/card";
-import { useState } from "react";
+// import { useState } from "react";
 import Loading from "@/components/ui/loading";
-import { MoviesResult } from "@/typings";
+import { Movies, MoviesResult } from "@/typings";
+import getMovies from "@/lib/get-movies";
 
-const FeaturedMovies = ({ movies }: { movies: MoviesResult[] }) => {
-  const [isLoading, setIsLoading] = useState(false);
+const FeaturedMovies = async () => {
+
+  const moviesData: Promise<Movies> = getMovies();
+
+  const { results: movies } = await moviesData;
+  // const [isLoading, setIsLoading] = useState(false);
 
   if (movies?.length === 0) {
-    setIsLoading(true);
   }
 
   return (
@@ -30,9 +32,7 @@ const FeaturedMovies = ({ movies }: { movies: MoviesResult[] }) => {
           </Link>
         </div>
         <div>
-          {isLoading ? (
-            <Loading />
-          ) : (
+          {(
             <div className="mt-8 place-items-center gap-x-2 gap-y-5 sm:gap-y-10 grid max-sm:grid-cols-2 max-md:grid-cols-3 md:grid-cols-4">
               {movies.map((movie) => (
                 <MovieCard key={movie.id} Movie={movie} />

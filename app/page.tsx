@@ -17,7 +17,7 @@ const Home = async () => {
       <Navbar />
       <main>
         <Banner movie={bannerMovie} />
-        <FeaturedMovies movies={movies} />
+        <FeaturedMovies />
       </main>
       <Footer />
     </>
