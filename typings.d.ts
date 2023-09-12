@@ -9,12 +9,14 @@ export interface MoviesResult {
   genre_ids: number[];
   id: number;
   original_language: string;
-  original_title: string;
+  original_title?: string;
+  name?: string
+  original_name?: string
   overview: string;
   popularity: number;
   poster_path: string;
   release_date: string;
-  title: string;
+  title?: string;
   video: boolean;
   vote_average: number;
   vote_count: number;

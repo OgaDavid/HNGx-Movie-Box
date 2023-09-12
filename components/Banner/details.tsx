@@ -6,15 +6,16 @@ import Image from "next/image";
 
 interface BannerDetailsProps {
   title: string
+  name: string
   overview: string
 }
 
-const BannerDetails: React.FC<BannerDetailsProps> = ({ title, overview }) => {
+const BannerDetails: React.FC<BannerDetailsProps> = ({ title, name, overview }) => {
   return (
     <Container>
       <div className="absolute top-[40%] md:top-1/2 transform -translate-y-1/2">
         <h1 className="text-4xl pb-3 max-w-[800px] max-md:leading-9 md:text-6xl font-bold text-white">
-          {title}
+          {title || name}
         </h1>
         <p className="text-white max-md:text-sm max-w-[300px] md:max-w-[500px]">
           {overview}

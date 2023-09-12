@@ -31,7 +31,7 @@ const MovieCard = ({ Movie }: { Movie: MoviesResult }) => {
         data-testid="movie-title"
         className="md:text-xl max-w-[250px] text-base font-bold"
       >
-        {Movie.original_title}
+        {Movie.title || Movie.name}
       </h4>
       <div className="flex items-center gap-1 justify-between">
         <span className="flex max-md:text-xs font-semibold items-center gap-1 md:gap-2">
