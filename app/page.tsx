@@ -2,25 +2,22 @@ import Banner from "@/components/Banner/banner";
 import Navbar from "@/components/Navbar/navbar";
 import FeaturedMovies from "@/components/featured";
 import Footer from "@/components/footer";
+import getMovies from "@/lib/get-movies";
 import { Movies } from "@/typings";
 
 const Home = async () => {
-  const api_url = `https://api.themoviedb.org/3/trending/all/day?api_key=11ca62a738dc81495dca5a3cef42e8f5&language=en-US&page=1`;
+  const moviesData: Promise<Movies> = getMovies();
 
-  const getMovies = async (): Promise<Movies> => {
-    const res = await fetch(api_url);
+  const { results: movies } = await moviesData;
 
-    return res.json();
-  };
-
-  const { results } = await getMovies();
+  const bannerMovie = movies[Math.floor(Math.random() * movies.length)];
 
   return (
     <>
       <Navbar />
       <main>
-        <Banner movies={results} />
-        <FeaturedMovies movies={results} />
+        <Banner movie={bannerMovie} />
+        <FeaturedMovies movies={movies} />
       </main>
       <Footer />
     </>
