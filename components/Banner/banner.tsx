@@ -25,6 +25,7 @@ const Banner = ({ movies }: { movies: any }) => {
         width={1440}
         height={600}
         alt={bannerMovie?.title}
+        loading="lazy"
         src={`https://image.tmdb.org/t/p/original${bannerMovie?.backdrop_path}`}
       />
       <BannerDetails
