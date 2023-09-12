@@ -16,9 +16,11 @@ const MovieCard = ({ Movie }: { Movie: MoviesResult }) => {
         width={250}
         height={370}
       />
-      <div className="absolute text-gray-300 py-1 px-3 rounded-full top-3 left-2 glassmorphism">
-        <span className="text-xs md:text-sm">TV Series</span>
-      </div>
+      {Movie.media_type === "tv" && (
+        <div className="absolute text-gray-300 py-1 px-3 rounded-full top-3 left-2 glassmorphism">
+          <span className="text-xs md:text-sm">TV Series</span>
+        </div>
+      )}
       <div className="absolute text-gray-300 p-2 rounded-full top-[13px] right-3 glassmorphism">
         <Heart className="w-4 h-4" />
       </div>

@@ -1,3 +1,4 @@
+import ReactQueryProvider from "@/providers/ReactQueryProvider";
 import "./globals.css";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
@@ -18,7 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={dm_Sans.className}>{children}</body>
+      <ReactQueryProvider>
+        <body className={dm_Sans.className}>{children}</body>
+      </ReactQueryProvider>
     </html>
   );
 }

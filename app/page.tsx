@@ -1,24 +1,24 @@
-"use client";
-
 import Banner from "@/components/Banner/banner";
 import Navbar from "@/components/Navbar/navbar";
 import FeaturedMovies from "@/components/featured";
 import Footer from "@/components/footer";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import getMovies from "@/actions/get-movies";
 
-const queryClient = new QueryClient();
+const Home = async () => {
+  const { results } = await getMovies();
 
-export default function Home() {
+  const bannerMovie = results[Math.floor(Math.random() * results.length)];
+
   return (
     <>
-      <QueryClientProvider client={queryClient}>
-        <Navbar />
-        <main>
-          <Banner />
-          <FeaturedMovies />
-        </main>
-        <Footer />
-      </QueryClientProvider>
+      <Navbar />
+      <main>
+        <Banner movie={bannerMovie} />
+        <FeaturedMovies movies={results} />
+      </main>
+      <Footer />
     </>
   );
-}
+};
+
+export default Home;

@@ -1,26 +1,19 @@
+"use client";
+
 import { BarChartBig, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Container from "@/components/ui/container";
 import MovieCard from "@/components/ui/card";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import { useState } from "react";
-import { Movies } from "@/typings";
 import Loading from "@/components/ui/loading";
+import { MoviesResult } from "@/typings";
 
-const api_url = `https://api.themoviedb.org/3/movie/top_rated?api_key=11ca62a738dc81495dca5a3cef42e8f5&language=en-US&page=1`;
+const FeaturedMovies = ({ movies }: { movies: MoviesResult[] }) => {
+  const [isLoading, setIsLoading] = useState(false);
 
-const FeaturedMovies = () => {
-  const [movies, setMovies] = useState<Movies>();
-
-  const { data, isLoading } = useQuery({
-    queryFn: async () => {
-      const { data } = await axios.get(api_url);
-      setMovies(data);
-    },
-  });
-
-  console.log(movies?.results);
+  if (movies?.length === 0) {
+    setIsLoading(true);
+  }
 
   return (
     <section className="mt-10">
@@ -41,7 +34,7 @@ const FeaturedMovies = () => {
             <Loading />
           ) : (
             <div className="mt-8 place-items-center gap-x-2 gap-y-5 sm:gap-y-10 grid max-sm:grid-cols-2 max-md:grid-cols-3 md:grid-cols-4">
-              {movies?.results.map((movie) => (
+              {movies.map((movie) => (
                 <MovieCard key={movie.id} Movie={movie} />
               ))}
             </div>
