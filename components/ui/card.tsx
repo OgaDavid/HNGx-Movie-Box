@@ -1,13 +1,17 @@
+import { MoviesResult } from "@/typings";
 import { Heart } from "lucide-react";
 import Image from "next/image";
 
-const MovieCard = () => {
+const MovieCard = ({ Movie }: { Movie: MoviesResult }) => {
   return (
-    <div data-testid="movie-card" className="flex relative space-y-2 flex-col">
+    <div
+      data-testid="movie-card"
+      className="flex group relative space-y-2 flex-col"
+    >
       <Image
         data-testid="movie-poster"
         className="w-[150px] rounded-tl-xl rounded-tr-xl  h-[230px] md:w-[250px] md:h-[370px]"
-        src="/images/stranger-things.png"
+        src={`https://image.tmdb.org/t/p/original${Movie.poster_path}`}
         alt="Movie poster"
         width={250}
         height={370}
@@ -21,8 +25,11 @@ const MovieCard = () => {
       <span className="text-muted-foreground text-xs">
         USA, <span data-testid="movie-release-date">2018 - current</span>{" "}
       </span>
-      <h4 data-testid="movie-title" className="md:text-xl text-base font-bold">
-        Stranger Things
+      <h4
+        data-testid="movie-title"
+        className="md:text-xl max-w-[250px] text-base font-bold"
+      >
+        {Movie.original_title}
       </h4>
       <div className="flex items-center gap-1 justify-between">
         <span className="flex max-md:text-xs font-semibold items-center gap-1 md:gap-2">
