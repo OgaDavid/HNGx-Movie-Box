@@ -41,13 +41,12 @@ PS: You MUST use react or  Next js
 
 
 ## Solution 🏆
-
+## Demo Link - https://moviebox-hngx.vercel.app/
+<br />
 <br />
 
-![MovieBox](https://moviebox-hngx.vercel.app)
-
 ![Demo screen](https://github.com/OgaDavid/HNGx-Movie-Box/blob/master/public/images/sipderman%20mobile.png)
-
+<br />
 <br />
 
 ![Demo screen](https://github.com/OgaDavid/HNGx-Movie-Box/blob/master/public/images/spiderman%20laptop.png)
