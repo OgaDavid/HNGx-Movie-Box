@@ -1,10 +1,11 @@
 import getMovie from "@/lib/get-movie";
 import getVideo from "@/lib/get-video";
-import { Credits, MoviesResult, Video, Videos } from "@/typings";
+import { Credits, Movies, MoviesResult, Video, Videos } from "@/typings";
 import { Metadata } from "next";
 import VideoPlayer from "../components/videoPlayer";
 import MovieDetails from "../components/movieDetails";
 import getCredits from "@/lib/get-credits";
+import getSimilar from "@/lib/get-similar";
 
 type Params = {
   params: {
@@ -26,11 +27,13 @@ const page = async ({ params: { movieId } }: Params) => {
   const movieData: Promise<MoviesResult> = getMovie(movieId);
   const movieVideos: Promise<Videos> = getVideo(movieId);
   const movieCredits: Promise<Credits> = getCredits(movieId);
+  const similarMovies: Promise<Movies> = getSimilar(movieId);
 
-  const [movie, videos, credits] = await Promise.all([
+  const [movie, videos, credits, similar] = await Promise.all([
     movieData,
     movieVideos,
     movieCredits,
+    similarMovies
   ]);
 
   const filteredVideos: Video[] = [];
@@ -47,7 +50,7 @@ const page = async ({ params: { movieId } }: Params) => {
     <main>
       <div className="flex flex-col items-start justify-start">
         <VideoPlayer trailer={randomTrailer} />
-        <MovieDetails credits={credits} movie={movie} />
+        <MovieDetails credits={credits} movie={movie} similar={similar} />
       </div>
     </main>
   );

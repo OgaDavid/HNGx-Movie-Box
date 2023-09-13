@@ -19,11 +19,6 @@ const sideLinks = [
     href: "/movies",
     icon: <Clapperboard />,
   },
-  // {
-  //   name: "Watch",
-  //   href: `/movies/`,
-  //   icon: <PlaySquare />,
-  // },
   {
     name: "TV Series",
     href: "/movies/tv",

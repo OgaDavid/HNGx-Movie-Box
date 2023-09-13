@@ -1,13 +1,19 @@
-import { Credits } from "@/typings";
-import { Calendar, Clock3, Eye, List, Star } from "lucide-react";
+import { Credits, Movies } from "@/typings";
+import { Calendar, ChevronRight, Clock3, Eye, List, Star } from "lucide-react";
 import React from "react";
+import SimilarCard from "./similarCard";
 
 interface MovieDetailsProps {
   movie: any;
   credits: Credits;
+  similar: Movies;
 }
 
-const MovieDetails: React.FC<MovieDetailsProps> = ({ movie, credits }) => {
+const MovieDetails: React.FC<MovieDetailsProps> = ({
+  movie,
+  credits,
+  similar,
+}) => {
   let directors: string[] = [];
   credits.cast.forEach((cast) => {
     if (cast.known_for_department === "Directing") {
@@ -29,6 +35,8 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie, credits }) => {
   stars.forEach((star) => {
     starsNames.push(star.original_name);
   });
+
+  const filteredSimilarMovies = similar.results.slice(0, 4);
 
   return (
     <section className="mt-5 mx-auto max-w-[1000px]">
@@ -83,6 +91,18 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie, credits }) => {
               </span>
             </p>
           </div>
+          <div className="mt-10">
+            <h5 className="font-semibold text-xl flex items-center mb-5">
+              Similar movies <ChevronRight className="w-5 mt-[3px] h-5" />
+            </h5>
+            {
+              <div className="mt-8 place-items-center gap-x-2 gap-y-5 sm:gap-y-10 grid max-sm:grid-cols-2 max-md:grid-cols-3 md:grid-cols-4">
+                {filteredSimilarMovies.map((movie) => (
+                  <SimilarCard key={movie.id} Movie={movie} />
+                ))}
+              </div>
+            }
+          </div>
         </div>
         <div className="grow pl-2">
           <div className="flex items-center justify-end gap-2">
@@ -115,7 +135,8 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie, credits }) => {
               data-testid="movie-runtime"
               className="flex items-center gap-2 font-medium"
             >
-              <Calendar className="w-5 h-5" /> Release Date: {movie.release_date}
+              <Calendar className="w-5 h-5" /> Release Date:{" "}
+              {movie.release_date}
             </p>
           </div>
         </div>
