@@ -10,8 +10,8 @@ export interface MoviesResult {
   id: number;
   original_language: string;
   original_title?: string;
-  name?: string
-  original_name?: string
+  name?: string;
+  original_name?: string;
   overview: string;
   popularity: number;
   poster_path: string;
@@ -20,10 +20,28 @@ export interface MoviesResult {
   video: boolean;
   vote_average: number;
   vote_count: number;
-  media_type: "movie" | "tv"
+  media_type: "movie" | "tv";
 }
 
 export interface Movies {
   page: number;
   results: MoviesResult[];
+}
+
+export interface Video {
+  iso_639_1: string;
+  iso_3166_1: string;
+  name: string;
+  site: "YouTube" | "Vimeo";
+  size: number;
+  type: string;
+  key: string
+  official: boolean;
+  published_at: string;
+  id: string;
+}
+
+export interface Videos {
+  id: number;
+  results: Array[Video[]];
 }

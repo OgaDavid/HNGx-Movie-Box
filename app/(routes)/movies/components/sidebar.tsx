@@ -1,7 +1,12 @@
+"use client"
+
 import Logo from "@/components/Navbar/logo";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clapperboard, Home, Tv } from "lucide-react";
+import { Calendar, Clapperboard, Home, PlaySquare, Tv } from "lucide-react";
+import Link from "next/link";
 import React from "react";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const sideLinks = [
   {
@@ -14,6 +19,11 @@ const sideLinks = [
     href: "/movies",
     icon: <Clapperboard />,
   },
+  // {
+  //   name: "Watch",
+  //   href: `/movies/`,
+  //   icon: <PlaySquare />,
+  // },
   {
     name: "TV Series",
     href: "/movies/tv",
@@ -27,6 +37,7 @@ const sideLinks = [
 ];
 
 const Sidebar = () => {
+  const pathname = usePathname();
   return (
     <aside className="fixed overflow-auto h-full hide-scrollbar rounded-tr-[45px] rounder-br-[45px] w-[226px] border">
       <div className="pt-10 flex flex-col">
@@ -35,12 +46,19 @@ const Sidebar = () => {
         </div>
         <ul className="flex my-16 flex-col gap-6 items-start">
           {sideLinks.map((link, index) => (
-            <li
-              key={index}
-              className="flex py-4 hover:border-r-rose-700 text-[#333333] hover:border-r-4 w-[226px] items-start gap-4 px-4 hover:bg-rose-100 cursor-pointer"
-            >
-              <span className="w-4 h-4">{link.icon}</span>
-              <span className="text-black font-bold ">{link.name}</span>
+            <li key={index}>
+              <Link
+                className={cn(
+                  "flex py-4 hover:border-r-rose-700 text-[#333333] hover:border-r-[6px] w-[226px] items-start gap-4 px-4 hover:bg-rose-100",
+                  pathname === link.href
+                    ? "border-r-rose-700 bg-rose-100 border-r-[6px]"
+                    : ""
+                )}
+                href={link.href}
+              >
+                <span className="w-4 h-4">{link.icon}</span>
+                <span className="text-black font-bold ">{link.name}</span>
+              </Link>
             </li>
           ))}
         </ul>

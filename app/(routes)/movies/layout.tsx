@@ -1,5 +1,4 @@
-import SearchInput from "@/components/Navbar/searchInput";
-import Sidebar from "./components/sidebar";
+import Sidebar from "@/app/(routes)/movies/components/sidebar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
