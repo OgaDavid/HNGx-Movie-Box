@@ -40,8 +40,8 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({
 
   return (
     <section className="mt-5 mx-auto max-w-[1000px]">
-      <div className="flex pb-10 items-start justify-start">
-        <div className="w-[75%] border-r pr-2 border-r-gray-200">
+      <div className="flex max-md:flex-col pb-10 max-lg:px-4 items-start justify-start">
+        <div className="md:w-[75%] max-md:border-none border-r pr-2 border-r-gray-200">
           <div className="flex items-start justify-start gap-5 flex-wrap">
             <h1
               data-testid="movie-title"
@@ -96,7 +96,7 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({
               Similar movies <ChevronRight className="w-5 mt-[3px] h-5" />
             </h5>
             {
-              <div className="mt-8 place-items-center gap-x-2 gap-y-5 sm:gap-y-10 grid max-sm:grid-cols-2 max-md:grid-cols-3 md:grid-cols-4">
+              <div className="mt-8 flex items-center gap-4 flex-wrap">
                 {filteredSimilarMovies.map((movie) => (
                   <SimilarCard key={movie.id} Movie={movie} />
                 ))}
@@ -104,8 +104,8 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({
             }
           </div>
         </div>
-        <div className="grow pl-2">
-          <div className="flex items-center justify-end gap-2">
+        <div className="max-md:mt-10 grow pl-2">
+          <div className="flex items-center md:justify-end gap-2">
             <span className="text-rose-700 border-r-2 pr-2 border-r-gray-200 flex gap-1 items-center text-lg font-bold">
               <Star className="text-yellow-400 w-5 h-5" />
               {movie.vote_average.toFixed(1)}

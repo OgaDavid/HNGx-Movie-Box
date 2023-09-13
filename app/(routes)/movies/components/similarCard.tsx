@@ -12,7 +12,7 @@ const SimilarCard = ({ Movie }: { Movie: MoviesResult }) => {
       >
         <Image
           data-testid="movie-poster"
-          className="w-[100px] rounded-[20px]  h-[180px] md:w-[173px] md:h-[271px]"
+          className="w-[120px] rounded-[20px] h-[200px] md:w-[173px] md:h-[271px]"
           src={`https://image.tmdb.org/t/p/original${Movie.poster_path}`}
           alt="Movie poster"
           width={250}

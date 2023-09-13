@@ -2,10 +2,8 @@
 
 import Logo from "@/components/Navbar/logo";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clapperboard, Home, PlaySquare, Tv } from "lucide-react";
-import Link from "next/link";
+import { Calendar, Clapperboard, Home, Tv } from "lucide-react";
 import React from "react";
-import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const sideLinks = [
@@ -28,9 +26,8 @@ const sideLinks = [
 ];
 
 const Sidebar = () => {
-  const pathname = usePathname();
   return (
-    <aside className="fixed overflow-auto h-full hide-scrollbar rounded-tr-[45px] rounder-br-[45px] w-[226px] border">
+    <aside className="fixed max-[1250px]:hidden overflow-auto h-full hide-scrollbar rounded-tr-[45px] rounder-br-[45px] w-[226px] border">
       <div className="pt-10 flex flex-col">
         <div className="ml-2">
           <Logo textColor="text-black" />
