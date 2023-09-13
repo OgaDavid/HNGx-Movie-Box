@@ -34,20 +34,16 @@ const page = async ({ params: { movieId } }: Params) => {
     }
   });
 
-  const randomTrailer = filteredVideos[Math.floor(Math.random() * filteredVideos.length)]
-
-  console.log(randomTrailer)
-
-  console.log(filteredVideos);
-
-  console.log(movie);
-  console.log(videos);
+  const randomTrailer =
+    filteredVideos[Math.floor(Math.random() * filteredVideos.length)];
 
   return (
-    <div>
-      <VideoPlayer trailer={randomTrailer} />
-      <MovieDetails />
-    </div>
+    <main>
+      <div className="flex flex-col items-start justify-start">
+        <VideoPlayer trailer={randomTrailer} />
+        <MovieDetails movie={movie} />
+      </div>
+    </main>
   );
 };
 
