@@ -2,10 +2,10 @@
 
 ## Moviebox
 
-### Objective:
+### 🎯 Objective:
 Create a movie discovery web application that allows users to search for movies, view details about them, and save their favorite movies. You’ll be consuming data from the TMDB API.
 
-### Requirements
+### ✍ Requirements
 1. User Interface:
 Create a responsive and visually appealing user interface for the application. Here's the link to the design you're expected to replicate: https://www.figma.com/file/tVfgoNfhYkQaUkh8LGqRab/MovieBox-(Community)?type=design&node-id=1220-324&mode=design&t=6998DWtjQrxz8mOf-0
 You should list the top 10 movies on the homepage.
@@ -38,3 +38,9 @@ Provide clear instructions on how to run your project locally in your README.md 
 Ensure that the code is well-documented and organized.
 This frontend challenge requires you to build a dynamic movie discovery app that interacts with a real API to fetch and display movie data.
 PS: You MUST use react or  Next js
+
+
+## Solution 🏆
+
+![Demo screen](https://github.com/OgaDavid/HNGx-Movie-Box/blob/master/public/images/sipderman%20mobile.png)
+![Demo screen](https://github.com/OgaDavid/HNGx-Movie-Box/blob/master/public/images/spiderman%20laptop.png)
