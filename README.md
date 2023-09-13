@@ -42,5 +42,8 @@ PS: You MUST use react or  Next js
 
 ## Solution 🏆
 
+<br />
 ![Demo screen](https://github.com/OgaDavid/HNGx-Movie-Box/blob/master/public/images/sipderman%20mobile.png)
+<br />
+
 ![Demo screen](https://github.com/OgaDavid/HNGx-Movie-Box/blob/master/public/images/spiderman%20laptop.png)
