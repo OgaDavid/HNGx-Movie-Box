@@ -6,9 +6,11 @@ import { Movies } from "@/typings";
 import getMovies from "@/lib/get-movies";
 import { Suspense } from "react";
 import Loading from "@/components/ui/loading";
+import getRandomPage from "@/lib/get-random-page";
 
 const FeaturedMovies = async () => {
-  const moviesData: Promise<Movies> = getMovies();
+  const randomPage = getRandomPage()
+  const moviesData: Promise<Movies> = getMovies(randomPage);
 
   const { results: movies } = await moviesData;
 

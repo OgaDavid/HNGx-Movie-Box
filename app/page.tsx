@@ -3,10 +3,12 @@ import Navbar from "@/components/Navbar/navbar";
 import FeaturedMovies from "@/components/featured";
 import Footer from "@/components/footer";
 import getMovies from "@/lib/get-movies";
+import getRandomPage from "@/lib/get-random-page";
 import { Movies } from "@/typings";
 
 const Home = async () => {
-  const moviesData: Promise<Movies> = getMovies();
+  const randomPage = getRandomPage();
+  const moviesData: Promise<Movies> = getMovies(randomPage);
 
   const { results: movies } = await moviesData;
 
@@ -14,7 +16,7 @@ const Home = async () => {
 
   return (
     <>
-    <Navbar />
+      <Navbar />
       <main>
         <Banner movie={bannerMovie} />
         <FeaturedMovies />
