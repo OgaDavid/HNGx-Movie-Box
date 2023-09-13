@@ -40,7 +40,7 @@ This frontend challenge requires you to build a dynamic movie discovery app that
 PS: You MUST use react or  Next js
 
 
-## Solution 🏆
+# Solution 🏆
 ## Demo Link - https://moviebox-hngx.vercel.app/
 <br />
 <br />
@@ -50,7 +50,7 @@ PS: You MUST use react or  Next js
 <br />
 
 ![Demo screen](https://github.com/OgaDavid/HNGx-Movie-Box/blob/master/public/images/spiderman%20laptop.png)
-
+<br />
 <br />
 
-![Demo screen](https://github.com/OgaDavid/HNGx-Movie-Box/blob/master/public/images/mobile%20(4).gif)
+![Demo screen](https://github.com/OgaDavid/HNGx-Movie-Box/blob/master/public/images/mobile%20(4).gif?raw=true)
