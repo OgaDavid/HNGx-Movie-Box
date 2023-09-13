@@ -44,7 +44,7 @@ const BannerDetails: React.FC<BannerDetailsProps> = ({
         </div>
         <div className="flex gap-4 mt-4">
           <Link
-            href={`/movie/${id}`}
+            href={`/movies/${id}`}
             className="bg-rose-700 hover:opacity-90 flex items-center gap-2 text-white px-4 py-2 rounded-md"
           >
             <PlayCircle className="text-white w-4 h-4" />

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const MovieCard = ({ Movie }: { Movie: MoviesResult }) => {
   return (
-    <Link href={`/movie/${Movie.id}`}>
+    <Link href={`/movies/${Movie.id}`}>
       <div
         data-testid="movie-card"
         className="flex group relative space-y-2 flex-col"
