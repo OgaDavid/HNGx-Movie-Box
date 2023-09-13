@@ -1,9 +1,12 @@
+import { getGenreNames } from "@/lib/get-genre";
 import { MoviesResult } from "@/typings";
 import { Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const MovieCard = ({ Movie }: { Movie: MoviesResult }) => {
+  const genres = getGenreNames(Movie.genre_ids);
+
   return (
     <Link href={`/movies/${Movie.id}`}>
       <div
@@ -54,7 +57,7 @@ const MovieCard = ({ Movie }: { Movie: MoviesResult }) => {
           </span>
         </div>
         <span className="text-muted-foreground text-xs font-medium">
-          Adventure, Action, Horror
+          {genres.join(", ")}
         </span>
       </div>
     </Link>
