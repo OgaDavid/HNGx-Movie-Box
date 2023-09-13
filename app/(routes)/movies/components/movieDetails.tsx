@@ -125,18 +125,16 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({
             </div>
           </div>
           <div className="flex flex-col gap-2 mt-4">
-            <p
-              data-testid="movie-runtime"
-              className="flex items-center gap-2 font-medium"
-            >
-              <Clock3 className="w-5 h-5" /> Runtime: {movie.runtime}mins
+            <p className="flex items-center gap-2 font-medium">
+              <Clock3 className="w-5 h-5" /> Runtime:{" "}
+              <span data-testid="movie-runtime">{movie.runtime}</span>mins
             </p>
             <p
               data-testid="movie-runtime"
               className="flex items-center gap-2 font-medium"
             >
               <Calendar className="w-5 h-5" /> Release Date:{" "}
-              {movie.release_date}
+              <span data-testid="movie-release-date">{new Date(movie.release_date).toUTCString()}</span>
             </p>
           </div>
         </div>
