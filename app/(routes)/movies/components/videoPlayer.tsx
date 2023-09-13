@@ -20,7 +20,7 @@ const VideoPlayer = ({ trailer }: { trailer: Video }) => {
   }, []);
 
   return (
-    <div>
+    <div className="flex items-center justify-center mx-auto">
       {isClient && (
         <ReactPlayer
           url={trailerUrl}
