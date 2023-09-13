@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner/banner";
+import Navbar from "@/components/Navbar/navbar";
 import FeaturedMovies from "@/components/featured";
 import Footer from "@/components/footer";
 import getMovies from "@/lib/get-movies";
@@ -13,6 +14,7 @@ const Home = async () => {
 
   return (
     <>
+    <Navbar />
       <main>
         <Banner movie={bannerMovie} />
         <FeaturedMovies />

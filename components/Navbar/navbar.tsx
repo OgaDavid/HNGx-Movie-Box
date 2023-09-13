@@ -30,7 +30,7 @@ const Navbar = () => {
     <header className={cn("fixed z-10 w-full", isPageScrolled && "glassmorphism")}>
       <Container>
         <div className="flex items-center w-full py-4 justify-between">
-          <Logo />
+          <Logo textColor="text-white" />
           <SearchInput />
           <div className="flex items-center gap-6">
             <p className="font-medium text-white">Sign in</p>

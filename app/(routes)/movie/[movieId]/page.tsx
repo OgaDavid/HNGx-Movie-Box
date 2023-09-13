@@ -1,3 +1,4 @@
+import Sidebar from "@/app/(routes)/movie/components/sidebar";
 import getMovie from "@/lib/get-movie";
 import { Metadata } from "next";
 
@@ -19,7 +20,7 @@ const page = async ({ params: { movieId } }: Params) => {
   const movieData = await getMovie(movieId);
   return (
     <div>
-      <h1>{movieData.title || movieData.name}</h1>
+      Hello
     </div>
   );
 };
