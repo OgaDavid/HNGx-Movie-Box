@@ -11,7 +11,7 @@ const MovieDetails = ({ movie }: { movie: any }) => {
             </h1>
             <div className="flex gap-2 items-center justify-center">
               {movie.genres.map((genre: any) => (
-                <span className="text-sm text-rose-700 py-1 px-4 rounded-full border border-rose-700">
+                <span key={genre.name} className="text-sm text-rose-700 py-1 px-4 rounded-full border border-rose-700">
                   {genre.name}
                 </span>
               ))}
