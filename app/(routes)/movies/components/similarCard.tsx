@@ -7,11 +7,9 @@ const SimilarCard = ({ Movie }: { Movie: MoviesResult }) => {
   return (
     <Link href={`/movies/${Movie.id}`}>
       <div
-        data-testid="movie-card"
         className="flex group relative space-y-2 flex-col"
       >
         <Image
-          data-testid="movie-poster"
           className="w-[120px] rounded-[20px] h-[200px] md:w-[173px] md:h-[271px]"
           src={`https://image.tmdb.org/t/p/original${Movie.poster_path}`}
           alt="Movie poster"
