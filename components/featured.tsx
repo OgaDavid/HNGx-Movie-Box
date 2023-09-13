@@ -29,7 +29,7 @@ const FeaturedMovies = async () => {
         <div>
           {
             <Suspense fallback={<Loading />}>
-              <div className="mt-8 place-items-center gap-x-2 gap-y-5 sm:gap-y-10 grid max-sm:grid-cols-2 max-md:grid-cols-3 md:grid-cols-4">
+              <div className="mt-8 place-items-center items-start justify-start gap-x-2 gap-y-5 sm:gap-y-10 grid max-sm:grid-cols-2 max-md:grid-cols-3 md:grid-cols-4">
                 {movies.map((movie) => (
                   <MovieCard key={movie.id} Movie={movie} />
                 ))}
